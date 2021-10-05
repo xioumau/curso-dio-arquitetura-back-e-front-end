@@ -14,7 +14,7 @@ namespace curso.api.tests.Integrations.Controllers
 {
     public class UsuarioControllerTests : IClassFixture<WebApplicationFactory<Startup>>, IAsyncLifetime
     {
-        private readonly WebApplicationFactory<Startup> _factory;
+        private readonly WebApplicationFactory<Startup> _factory; // possibilita criação do Client 
         protected readonly ITestLoggerFactory _output;
         protected readonly HttpClient _httpClient;
         protected RegistroViewModelInput RegistroViewModelInput;
@@ -24,7 +24,7 @@ namespace curso.api.tests.Integrations.Controllers
         {
             _factory = factory;
             _output = new TestLoggerFactory(output);
-            _httpClient = _factory.CreateClient();
+            _httpClient = _factory.CreateClient(); // Client pode trafegar pelas rotas
         }
 
         [Fact]
