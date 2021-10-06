@@ -8,7 +8,7 @@ namespace curso.api.Models.Usuarios
         public string Login { get; set; }
 
         [Required(ErrorMessage = "O E-mail é obrigatório")]
-        [EmailAddress(ErrorMessage = "O E-mail é inválido")]
+        [EmailAddress(ErrorMessage = "O E-mail é inválido")] // propriedade que valida email
         public string Email { get; set; }
 
         [Required(ErrorMessage = "A Senha é obrigatório")]

@@ -31,9 +31,9 @@ namespace curso.api.tests.Integrations.Controllers
         public async Task Registrar_InformandoUsuarioESenha_DeveRetornarSucesso()
         {
             // Arrange
-            RegistroViewModelInput = new AutoFaker<RegistroViewModelInput>(AutoBogusConfiguration.LOCATE)
-                                            .RuleFor(p => p.Login, faker => faker.Person.UserName)
-                                            .RuleFor(p => p.Email, faker => faker.Person.Email);
+            RegistroViewModelInput = new AutoFaker<RegistroViewModelInput>(AutoBogusConfiguration.LOCATE) // ultilizando a biblioteca autobogus
+                                            .RuleFor(p => p.Login, faker => faker.Person.UserName) // gera fake username 
+                                            .RuleFor(p => p.Email, faker => faker.Person.Email); // gera fake email 
                                                 
             StringContent content = new StringContent(JsonConvert.SerializeObject(RegistroViewModelInput), Encoding.UTF8, "application/json");
 
